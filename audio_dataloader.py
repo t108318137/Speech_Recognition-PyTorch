@@ -52,7 +52,7 @@ class Aduio_DataLoader(Dataset):
 
     def __getitem__(self, item):
         df = pd.read_csv(
-            r'D:\dataset\ntut-ml-2020-spring-taiwanese-e2e\train-toneless_update.csv',
+            r'D:\dataset\ntut-ml-2020-taiwanese-e2e\train-toneless_update.csv',
             encoding="utf8",
             index_col='id')
         # 讀取一個音訊檔，返回每個音訊資料

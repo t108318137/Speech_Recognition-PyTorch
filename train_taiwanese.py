@@ -137,7 +137,7 @@ def train(model, device, train_loader, val_loader, criterion, optimizer,
 
 def main(learning_rate=5e-4,
          batch_size=6,
-         epochs=1,
+         epochs=10,
          experiment=Experiment(api_key='dummy_key', disabled=True)):
     hparams = {
         "n_cnn_layers": 3,
@@ -157,9 +157,9 @@ def main(learning_rate=5e-4,
     device = torch.device("cuda" if use_cuda else "cpu")
 
     train_dataset = Aduio_DataLoader(
-        r'D:\dataset\ntut-ml-2020-spring-taiwanese-e2e\train')
+        r'D:\dataset\ntut-ml-2020-taiwanese-e2e\train')
     val_dataset = Aduio_DataLoader(
-        r'D:\dataset\ntut-ml-2020-spring-taiwanese-e2e\val')
+        r'D:\dataset\ntut-ml-2020-taiwanese-e2e\val')
 
     train_loader = data.DataLoader(
         dataset=train_dataset,

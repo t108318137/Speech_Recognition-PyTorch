@@ -73,8 +73,8 @@ with tqdm(total=test_epoch_size, desc='test', postfix=dict,
             pbar.set_postfix(**{'step/s': waste_time})
             pbar.update(1)
 
-id_path = r'D:\dataset\ntut-ml-2020-spring-taiwanese-e2e\sample.csv'
-save_path = r'D:\dataset\ntut-ml-2020-spring-taiwanese-e2e\results\test.csv'
+id_path = r'D:\dataset\ntut-ml-2020-taiwanese-e2e\sample.csv'
+save_path = r'D:\dataset\ntut-ml-2020-taiwanese-e2e\results\test.csv'
 dictionary = {'id': file_list[:], 'text': pred_list[:]}
 final_file_list, final_pred_list = [], []
 for i in range(len(file_list)):
