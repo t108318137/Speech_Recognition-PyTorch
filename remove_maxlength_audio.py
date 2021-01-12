@@ -3,9 +3,9 @@ import librosa
 import os
 from tqdm import tqdm
 
-path = r'D:\dataset\ntut-ml-2020-spring-taiwanese-e2e\train'
+path = r'D:\dataset\ntut-ml-2020-spring-taiwanese-e2e\train_org'
 filelist = os.listdir(path)
-maxduration = 20    #最大秒數
+maxduration = 30    #最大秒數
 for filename in (filelist):
     file_path = os.path.join(path, filename)
     y, sr = librosa.load(file_path)

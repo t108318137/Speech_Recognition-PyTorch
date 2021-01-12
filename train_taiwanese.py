@@ -136,8 +136,8 @@ def train(model, device, train_loader, val_loader, criterion, optimizer,
 
 
 def main(learning_rate=5e-4,
-         batch_size=10,
-         epochs=50,
+         batch_size=6,
+         epochs=1,
          experiment=Experiment(api_key='dummy_key', disabled=True)):
     hparams = {
         "n_cnn_layers": 3,
@@ -185,7 +185,7 @@ def main(learning_rate=5e-4,
     print('Num Model Parameters',
           sum([param.nelement() for param in model.parameters()]))
     optimizer = optim.AdamW(model.parameters(), hparams['learning_rate'])
-    criterion = nn.CTCLoss(blank=28).to(device)
+    criterion = nn.CTCLoss(blank=28).to(device) #blank = 28個不同字元
     scheduler = optim.lr_scheduler.OneCycleLR(optimizer,
                                               max_lr=hparams['learning_rate'],
                                               steps_per_epoch=int(
