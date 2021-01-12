@@ -40,7 +40,7 @@ model = SpeechRecognitionModel(hparams['n_cnn_layers'],
                                hparams['stride'],
                                hparams['dropout']).to(device)
 model.load_state_dict(
-    torch.load(r'./weights/epoch75-val_loss0.2958-avg_wer0.0519.pth'))
+    torch.load(r'./weights/epoch10-val_loss0.3268-avg_wer0.0699.pth'))
 test_dataset = Aduio_DataLoader(
     r'D:\dataset\ntut-ml-2020-spring-taiwanese-e2e\test-shuf')
 
@@ -74,7 +74,7 @@ with tqdm(total=test_epoch_size, desc='test', postfix=dict,
             pbar.update(1)
 
 id_path = r'D:\dataset\ntut-ml-2020-spring-taiwanese-e2e\sample.csv'
-save_path = r'D:\dataset\ntut-ml-2020-spring-taiwanese-e2e\test.csv'
+save_path = r'D:\dataset\ntut-ml-2020-spring-taiwanese-e2e\results\test.csv'
 dictionary = {'id': file_list[:], 'text': pred_list[:]}
 final_file_list, final_pred_list = [], []
 for i in range(len(file_list)):
